@@ -1,5 +1,6 @@
 package com.chilwee.pojo;
 
+//统一响应实体类
 public class Result {
     private Integer code;//响应码，1 代表成功; 0 代表失败
     private String msg;  //响应码 描述字符串
