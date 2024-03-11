@@ -2,6 +2,7 @@ package com.chilwee.contorller;
 
 import com.chilwee.pojo.DataEnerge.DataEnerge;
 import com.chilwee.pojo.DataTime.DataTime;
+import com.chilwee.pojo.DataVoltages.DataVoltages;
 import com.chilwee.pojo.Result;
 import com.chilwee.service.impl.HistoryInfo;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -25,6 +26,12 @@ public class TietaAcdcController {
     public Result GetEnergetimeService(String nowtime,Integer deviceid) throws JsonProcessingException {
         DataTime data = datainfo.getMainInfo(nowtime,deviceid);
         return Result.success(data);
-    };
+    }
+
+    @RequestMapping("/cloud/voltages")
+    public Result GetVoltagesService(String nowdate,Integer deviceid) throws JsonProcessingException {
+        DataVoltages data = datainfo.getVoltageInfo(nowdate,deviceid);
+        return Result.success(data);
+    }
 
 }
